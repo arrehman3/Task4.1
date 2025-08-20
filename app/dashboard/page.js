@@ -8,19 +8,19 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
 
-  // Fetch user info from the dashboard API
+
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch('/api/dashboard', {
         method: 'GET',
-        credentials: 'include', // Ensure cookies are sent
+        credentials: 'include', 
       });
 
       if (response.ok) {
         const data = await response.json();
         setUser(data);
       } else {
-        // If user is not authorized, redirect to login
+     
         router.push('/login');
       }
 
@@ -30,7 +30,7 @@ export default function Dashboard() {
     fetchUser();
   }, [router]);
 
-  // Logout function
+
   const handleLogout = async () => {
     await fetch('/api/logout', { method: 'POST', credentials: 'include' });
     router.push('/login');
@@ -53,4 +53,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
 

@@ -24,7 +24,6 @@ export default function LoginPage() {
     const data = await response.json();
 
     if (response.ok) {
-      // Redirect to dashboard after successful login
       router.push('/dashboard');
     } else {
       setError(data.msg || 'Login failed');
@@ -58,4 +57,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
 

@@ -1,4 +1,4 @@
-'use client'; // needed because this is a client component
+'use client'; 
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -25,7 +25,7 @@ export default function SignupPage() {
     const data = await response.json();
 
     if (response.ok) {
-      router.push('/login'); // go to login page after signup
+      router.push('/login'); 
     } else {
       setError(data.msg || 'Signup failed');
     }
@@ -65,4 +65,5 @@ export default function SignupPage() {
     </div>
   );
 }
+
 
